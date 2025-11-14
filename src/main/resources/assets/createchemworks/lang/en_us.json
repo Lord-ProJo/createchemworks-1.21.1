@@ -2,5 +2,12 @@
   "item.createchemworks.iron_powder" : "Iron Powder",
   "item.createchemworks.gold_powder" : "Gold Powder",
   "item.createchemworks.copper_powder" : "Copper Powder",
-  "item.createchemworks.zinc_powder" : "Zinc Powder"
+  "item.createchemworks.zinc_powder" : "Zinc Powder",
+  "item.createchemworks.sulfur_powder" : "Sulfur Powder",
+
+  "item.createchemworks.raw_sulfur" : "Raw Sulfur",
+  "item.createchemworks.sulfur_crystal" : "Sulfur Crystal",
+
+
+  "block.createchemworks.sulfur_ore": "Sulfur Ore"
 }

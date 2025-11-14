@@ -9,6 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateChemworks.MOD_ID);
 
+    // Ore Powder creation
     public  static final DeferredItem<Item> IRON_POWDER = ITEMS.register("iron_powder",
             () -> new Item(new Item.Properties()));
 
@@ -21,7 +22,15 @@ public class ModItems {
     public  static final DeferredItem<Item> ZINC_POWDER = ITEMS.register("zinc_powder",
             () -> new Item(new Item.Properties()));
 
+    public  static final DeferredItem<Item> SULFUR_POWDER = ITEMS.register("sulfur_powder",
+            () -> new Item(new Item.Properties()));
 
+    // Sulfur Creation
+    public  static final DeferredItem<Item> RAW_SULFUR = ITEMS.register("raw_sulfur",
+            () -> new Item(new Item.Properties()));
+
+    public  static final DeferredItem<Item> SULFUR_CRYSTAL = ITEMS.register("sulfur_crystal",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

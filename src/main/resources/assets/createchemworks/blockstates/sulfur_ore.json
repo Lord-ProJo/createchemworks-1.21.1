@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": [
+      { "model": "createchemworks:block/sulfur_ore", "weight":2 }
+     ,{ "model": "createchemworks:block/sulfur_ore1", "weight":2 }
+     ,{ "model": "createchemworks:block/sulfur_ore2", "weight":2 }
+     ,{ "model": "createchemworks:block/sulfur_ore3", "weight":2 }
+     ,{ "model": "createchemworks:block/sulfur_ore4", "weight":1 }
+    ]
+  }
+}

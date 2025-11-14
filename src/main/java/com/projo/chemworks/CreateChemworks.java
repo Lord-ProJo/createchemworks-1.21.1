@@ -1,5 +1,6 @@
 package com.projo.chemworks;
 
+import com.projo.chemworks.block.ModBlocks;
 import com.projo.chemworks.item.ModItems;
 import org.slf4j.Logger;
 
@@ -36,6 +37,8 @@ public class CreateChemworks {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -54,8 +57,16 @@ public class CreateChemworks {
             event.accept(ModItems.GOLD_POWDER);
             event.accept(ModItems.COPPER_POWDER);
             event.accept(ModItems.ZINC_POWDER);
+            event.accept(ModItems.SULFUR_POWDER);
+
+            event.accept(ModItems.RAW_SULFUR);
+            event.accept(ModItems.SULFUR_CRYSTAL);
+
         }
 
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SULFUR_ORE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

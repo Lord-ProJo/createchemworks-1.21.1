@@ -1,6 +1,7 @@
 package com.projo.chemworks;
 
 import com.projo.chemworks.block.ModBlocks;
+import com.projo.chemworks.item.ModCreativeModeTabs;
 import com.projo.chemworks.item.ModItems;
 import org.slf4j.Logger;
 
@@ -36,6 +37,9 @@ public class CreateChemworks {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
@@ -64,8 +68,10 @@ public class CreateChemworks {
 
         }
 
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.SULFUR_ORE);
+            event.accept(ModBlocks.RAW_SULFUR_BLOCK);
+
         }
     }
 

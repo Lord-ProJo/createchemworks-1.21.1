@@ -64,8 +64,10 @@ public class CreateChemworks {
 
         }
 
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.SULFUR_ORE);
+            event.accept(ModBlocks.RAW_SULFUR_BLOCK);
+
         }
     }
 

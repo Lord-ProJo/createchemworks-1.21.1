@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "createchemworks:block/raw_sulfur_block"
+  }
+}

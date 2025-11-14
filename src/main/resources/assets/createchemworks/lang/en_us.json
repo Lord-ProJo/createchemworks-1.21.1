@@ -1,13 +1,6 @@
 {
-  "itemGroup.createchemworks": "Example Mod Tab",
-  "block.createchemworks.example_block": "Example Block",
-  "item.createchemworks.example_item": "Example Item",
-
-  "createchemworks.configuration.title": "Create: Chemworks Configs",
-  "createchemworks.configuration.section.createchemworks.common.toml": "Create: Chemworks Configs",
-  "createchemworks.configuration.section.createchemworks.common.toml.title": "Create: Chemworks Configs",
-  "createchemworks.configuration.items": "Item List",
-  "createchemworks.configuration.logDirtBlock": "Log Dirt Block",
-  "createchemworks.configuration.magicNumberIntroduction": "Magic Number Text",
-  "createchemworks.configuration.magicNumber": "Magic Number"
+  "item.createchemworks.iron_powder" : "Iron Powder",
+  "item.createchemworks.gold_powder" : "Gold Powder",
+  "item.createchemworks.copper_powder" : "Copper Powder",
+  "item.createchemworks.zinc_powder" : "Zinc Powder"
 }

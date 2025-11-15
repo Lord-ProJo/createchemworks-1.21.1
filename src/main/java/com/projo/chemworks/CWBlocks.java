@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.Tags;
 
 import java.util.Map;
@@ -44,15 +45,41 @@ public class CWBlocks {
                                 lt.applyExplosionDecay(b, LootItem.lootTableItem(CWItems.RAW_SULFUR.get())
                                         .apply(ApplyBonusCount.addOreBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))))));
             })
+            .blockstate((c, p) -> {
+                var vb = p.getVariantBuilder(c.getEntry());
+                var all = vb.forAllStates((state) -> ConfiguredModel.builder().build());
+                ConfiguredModel m0 = ConfiguredModel.builder()
+                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit")))
+                        .weight(2)
+                        .build();
+                ConfiguredModel m1 = ConfiguredModel.builder()
+                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit1")))
+                        .weight(2)
+                        .build();
+                ConfiguredModel m2 = ConfiguredModel.builder()
+                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit2")))
+                        .weight(2)
+                        .build();
+                ConfiguredModel m3 = ConfiguredModel.builder()
+                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit3")))
+                        .weight(2)
+                        .build();
+                ConfiguredModel m4 = ConfiguredModel.builder()
+                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit4")))
+                        .weight(1)
+                        .build();
 
+                vb.addModels(p.models(), m0, m1, m2, m3, m4);
+            })
             .tag(BlockTags.NEEDS_IRON_TOOL,
                     Tags.Blocks.ORES)
             .transform(tagBlockAndItem(Map.of()))
             .tag(Tags.Items.ORES)
-            .model((c, p) -> {
-                String path = "block/" + c.getName();
-                p.cubeColumn(c.getName(), p.modLoc(path + "_side"), p.modLoc(path + "_end"));
-            })
+                    .model((c, p) -> {
+                        String path = "block/" + c.getName();
+                        p.cubeColumn(c.getName(), p.modLoc(path + "_side"), p.modLoc(path + "_end"));
+                    })
+
             .build()
             .register();
 

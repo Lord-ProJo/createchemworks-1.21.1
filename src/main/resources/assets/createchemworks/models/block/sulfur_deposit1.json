@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "createchemworks:block/top_sulfur_deposit1",
+    "side": "createchemworks:block/side_sulfur_deposit1"
+  }
+}

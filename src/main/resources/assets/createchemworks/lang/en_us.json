@@ -9,8 +9,7 @@
   "item.createchemworks.sulfur_crystal" : "Sulfur Crystal",
 
 
-  "block.createchemworks.sulfur_ore": "Sulfur Ore",
+  "block.createchemworks.sulfur_deposit": "Sulfur Deposit",
   "block.createchemworks.raw_sulfur_block": "Block of Raw Sulfur",
-  "creativetab.createchemworks.sulfur.items":"Create Chemworks: Items" ,
-  "creativetab.createchemworks.sulfur.block":"Create Chemworks: Blocks"
+  "itemGroup.createchemworks.main": "Create: Chemworks"
 }

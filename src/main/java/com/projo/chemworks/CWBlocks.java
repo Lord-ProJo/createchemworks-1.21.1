@@ -7,6 +7,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -48,6 +49,10 @@ public class CWBlocks {
                     Tags.Blocks.ORES)
             .transform(tagBlockAndItem(Map.of()))
             .tag(Tags.Items.ORES)
+            .model((c, p) -> {
+                String path = "block/" + c.getName();
+                p.cubeColumn(c.getName(), p.modLoc(path + "_side"), p.modLoc(path + "_end"));
+            })
             .build()
             .register();
 

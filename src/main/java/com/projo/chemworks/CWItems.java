@@ -1,11 +1,6 @@
-package com.projo.chemworks.item;
+package com.projo.chemworks;
 
-import com.projo.chemworks.CreateChemworks;
-import com.simibubi.create.Create;
-import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
-import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.Tags;
 

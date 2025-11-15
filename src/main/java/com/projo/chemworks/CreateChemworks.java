@@ -1,33 +1,28 @@
 package com.projo.chemworks;
 
-import com.projo.chemworks.block.CWBlocks;
-import com.projo.chemworks.item.CWCreativeModeTabs;
-import com.projo.chemworks.item.CWItems;
+import com.projo.chemworks.infrastructure.data.CreateChemworksDatagen;
 import com.simibubi.create.CreateBuildInfo;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import net.createmod.catnip.lang.FontHelper;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
-
-import static com.simibubi.create.Create.onCtor;
 
 @Mod(CreateChemworks.MOD_ID)
 public class CreateChemworks {
@@ -62,14 +57,41 @@ public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID
         IEventBus neoforgeEventBus = NeoForge.EVENT_BUS;
 
         REGISTRATE.registerEventListeners(modEventBus);
-
+        //CWTags.init();
         CWBlocks.register();
+        //CWBlockEntityTypes.register()
         CWItems.register();
+        //CWFluids.register();
+
+        //CWConfigs.register(modLoadingContext, modContainer);
 
         CWCreativeModeTabs.register(modEventBus);
+
+        modEventBus.addListener(CreateChemworks::init);
+        modEventBus.addListener(CreateChemworks::onRegister);
+        modEventBus.addListener(EventPriority.LOWEST, CreateChemworksDatagen::gatherData);
+        //neoforgeEventBus.addListener(CWFluids::handleFluidEffect);
+
 
 
     }
 
+    public static void init(final FMLCommonSetupEvent event) {
+        //CWFluids.registerFluidInteractions();
+    }
+
+    public static void onRegister(final RegisterEvent event) {
+        //CWFanProcessingTypes.register();
+
+        if (event.getRegistry() == BuiltInRegistries.TRIGGER_TYPES) {
+            //CWAdvancement.register();
+            //CWTriggers.register();
+        }
+    }
+
+
+    public static ResourceLocation asResource(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
 
 }

@@ -1,13 +1,10 @@
-package com.projo.chemworks.block;
+package com.projo.chemworks;
 
-import com.projo.chemworks.CreateChemworks;
-import com.projo.chemworks.item.CWCreativeModeTabs;
-import com.projo.chemworks.item.CWItems;
-import com.simibubi.create.Create;
-import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.data.BlockStateGen;
+import com.simibubi.create.foundation.data.ModelGen;
 import com.simibubi.create.foundation.data.SharedProperties;
-import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
@@ -46,9 +43,9 @@ public class CWBlocks {
                                 lt.applyExplosionDecay(b, LootItem.lootTableItem(CWItems.RAW_SULFUR.get())
                                         .apply(ApplyBonusCount.addOreBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))))));
             })
+
             .tag(BlockTags.NEEDS_IRON_TOOL,
-                    Tags.Blocks.ORES
-            )
+                    Tags.Blocks.ORES)
             .transform(tagBlockAndItem(Map.of()))
             .tag(Tags.Items.ORES)
             .build()

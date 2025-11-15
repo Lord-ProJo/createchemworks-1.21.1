@@ -1,6 +1,5 @@
-package com.projo.chemworks.item;
+package com.projo.chemworks;
 
-import com.projo.chemworks.CreateChemworks;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.TagDependentIngredientItem;
 import com.tterrag.registrate.util.entry.ItemEntry;

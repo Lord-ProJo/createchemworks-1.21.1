@@ -16,11 +16,10 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class GeneratedEntriesProvider extends DatapackBuiltinEntriesProvider {
-    @SuppressWarnings({ "rawtypes", "unchecked" })
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.DAMAGE_TYPE, CWDamageTypes::bootstrap)
-            .add(Registries.CONFIGURED_FEATURE, (RegistrySetBuilder.RegistryBootstrap) CWConfiguredFeatures::bootstrap)
+            .add(Registries.CONFIGURED_FEATURE, CWConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, CWPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CWBiomeModifiers::bootstrap)
             ;

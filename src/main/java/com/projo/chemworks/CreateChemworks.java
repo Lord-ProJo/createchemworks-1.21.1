@@ -57,18 +57,16 @@ public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID
         IEventBus neoforgeEventBus = NeoForge.EVENT_BUS;
 
         REGISTRATE.registerEventListeners(modEventBus);
-        //CWTags.init();
-        CWBlocks.register();
-        //CWBlockEntityTypes.register()
-        CWItems.register();
-        //CWFluids.register();
-
-        //CWConfigs.register(modLoadingContext, modContainer);
 
         CWCreativeModeTabs.register(modEventBus);
+        CWTags.init();
+        CWBlocks.register();
+        CWItems.register();
+
 
         modEventBus.addListener(CreateChemworks::init);
         modEventBus.addListener(CreateChemworks::onRegister);
+        modEventBus.addListener(EventPriority.HIGHEST, CreateChemworksDatagen::gatherDataHighPriority);
         modEventBus.addListener(EventPriority.LOWEST, CreateChemworksDatagen::gatherData);
         //neoforgeEventBus.addListener(CWFluids::handleFluidEffect);
 

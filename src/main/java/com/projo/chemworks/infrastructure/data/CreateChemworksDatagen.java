@@ -4,7 +4,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.projo.chemworks.CreateChemworks;
 import com.simibubi.create.foundation.utility.FilesHelper;
-import com.simibubi.create.infrastructure.data.GeneratedEntriesProvider;
 import com.tterrag.registrate.providers.ProviderType;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.core.HolderLookup;
@@ -26,7 +25,6 @@ public class CreateChemworksDatagen {
         if (!event.getMods().contains(CreateChemworks.MOD_ID))
             return;
 
-
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
@@ -35,18 +33,16 @@ public class CreateChemworksDatagen {
 
         GeneratedEntriesProvider generatedEntriesProvider = new GeneratedEntriesProvider(output, lookupProvider);
         lookupProvider = generatedEntriesProvider.getRegistryProvider();
+
         generator.addProvider(event.includeServer(), generatedEntriesProvider);
-
-        //generator.addProvider(event.includeClient(), new CWStandardRecipeGen(output, lookupProvider));
-        //generator.addProvider(event.includeServer(), new CWMechanicalCraftingRecipeGen(output, lookupProvider));
-     //  generator.addProvider(event.includeServer(), new CWShapelessRecipeGen(output, lookupProvider));
-
-
+        // generator.addProvider(event.includeClient(), new CWStandardRecipeGen(output, lookupProvider));
+        // generator.addProvider(event.includeServer(), new CWMechanicalCraftingRecipeGen(output, lookupProvider));
+        // generator.addProvider(event.includeServer(), new CWShapelessRecipeGen(output, lookupProvider));
         // generator.addProvider(event.includeClient(), new CWAdvancement(output, lookupProvider));
 
-        if (event.includeServer()) {
+        // if (event.includeServer()) {
            // CWRecipeProvider.registerAllProcessing(generator, output, lookupProvider);
-        }
+        // }
     }
 
     private static void addExtraRegistrateData() {
@@ -55,11 +51,11 @@ public class CreateChemworksDatagen {
         CreateChemworks.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
             BiConsumer<String, String> langConsumer = provider::add;
 
-            provideDefaultLang("interface", langConsumer);
-            provideDefaultLang("potion", langConsumer);
-            provideDefaultLang("tooltips", langConsumer);
+            //provideDefaultLang("interface", langConsumer);
+            //provideDefaultLang("potion", langConsumer);
+            //provideDefaultLang("tooltips", langConsumer);
             //CWAdvancement.provideLang(langConsumer);
-            providePonderLang(langConsumer);
+            //providePonderLang(langConsumer);
         });
     }
 
@@ -77,8 +73,8 @@ public class CreateChemworksDatagen {
         }
     }
 
-    private static void providePonderLang(BiConsumer<String, String> consumer) {
+    //private static void providePonderLang(BiConsumer<String, String> consumer) {
         //PonderIndex.addPlugin(new CreateChemworksPonderPlugin());
-        PonderIndex.getLangAccess().provideLang(CreateChemworks.MOD_ID, consumer);
-    }
+        //PonderIndex.getLangAccess().provideLang(CreateChemworks.MOD_ID, consumer);
+    //}
 }

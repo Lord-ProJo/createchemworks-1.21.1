@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "createchemworks:block/sulfur_deposit"
+      },
+      {
+        "model": "createchemworks:block/sulfur_deposit_1"
+      },
+      {
+        "model": "createchemworks:block/sulfur_deposit_2"
+      },
+      {
+        "model": "createchemworks:block/sulfur_deposit_3"
+      },
+      {
+        "model": "createchemworks:block/sulfur_deposit_4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+// 1.21.1	2025-11-16T01:24:55.3956061	CreateChemworks Generated Registry Entries
+c95ef12b8c79480e42592332c8730e515504306c data/createchemworks/neoforge/biome_modifier/add_sulfur_deposit.json
+f30fbda246c4c558c835327b14140ca95e4b30f0 data/createchemworks/worldgen/configured_feature/sulfur_deposit.json
+882d6a07cd7d34f738e95834247a4e383bb53d1d data/createchemworks/worldgen/placed_feature/sulfur_deposit_placed.json

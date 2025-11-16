@@ -1,0 +1,25 @@
+// 1.21.1	2025-11-16T00:54:20.3817502	Registrate Provider for createchemworks [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+144c70f04b3842912b15c1dadc976c80257a43d6 assets/createchemworks/blockstates/raw_sulfur_block.json
+fbb4a65f75c0e06813e34fd73feb130341018980 assets/createchemworks/blockstates/sulfur_deposit.json
+59bd83ace5c0a8e87b7924a28fc7cf674aa1b804 assets/createchemworks/lang/en_ud.json
+b004eaf7dfe7df7b9ecb724011e153ad038843a6 assets/createchemworks/lang/en_us.json
+d569875e98e99a81cfb96ed7f0e50028c1145aeb assets/createchemworks/models/block/raw_sulfur_block.json
+3fb3f7c4145c2e2f681b05c3293b7d6906e0dc36 assets/createchemworks/models/block/sulfur_deposit.json
+e1c7098f018158bf3b2fa9202fc1d2e34318a4d6 assets/createchemworks/models/block/sulfur_deposit_1.json
+cca9ee900de2b107087578ee09f15c23ce08f217 assets/createchemworks/models/block/sulfur_deposit_2.json
+317ae8ef6b9698c9e7f5db5629095f98188c3843 assets/createchemworks/models/block/sulfur_deposit_3.json
+1116f94c963dce0eb071bc3bfe3a9ce7c64ff41c assets/createchemworks/models/block/sulfur_deposit_4.json
+fda5cd685972c0b52d95113afe9353ced23e57f2 assets/createchemworks/models/item/raw_sulfur.json
+35aac11cc30e9ce7a9d52a943b8ae80325b1e88e assets/createchemworks/models/item/raw_sulfur_block.json
+8de0e71dce0bb93d3becfd3818cf77abac42cca0 assets/createchemworks/models/item/sulfur_crystal.json
+3fb3f7c4145c2e2f681b05c3293b7d6906e0dc36 assets/createchemworks/models/item/sulfur_deposit.json
+a245ad1ef7a70f77a4839dfb82544b14db2b1f05 data/createchemworks/loot_table/blocks/raw_sulfur_block.json
+2267711f35ab9e6fdb2ed47a8ddcfad3b8a25d16 data/createchemworks/loot_table/blocks/sulfur_deposit.json
+632fd8c94584620699419f77769d41bdd8d14057 data/c/tags/block/ores.json
+0c940f98855eca1134661ca9f38f9cbda292201b data/c/tags/block/storage_blocks.json
+41445b814019f85144dab1d0d01d943790a6001b data/c/tags/item/ingots.json
+632fd8c94584620699419f77769d41bdd8d14057 data/c/tags/item/ores.json
+5a48fc9946cd5532d6699e9163fc84cecbea3afc data/c/tags/item/raw_materials.json
+0c940f98855eca1134661ca9f38f9cbda292201b data/c/tags/item/storage_blocks.json
+e9773e59d4d1f852ca64c3fddde2ed6757f03906 data/minecraft/tags/block/mineable/pickaxe.json
+e9773e59d4d1f852ca64c3fddde2ed6757f03906 data/minecraft/tags/block/needs_iron_tool.json

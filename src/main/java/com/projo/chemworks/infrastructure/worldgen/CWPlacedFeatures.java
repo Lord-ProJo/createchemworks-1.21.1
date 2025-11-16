@@ -25,7 +25,7 @@ public class CWPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> featureLookup = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> sulfurdeposit = featureLookup.getOrThrow(CWConfiguredFeatures.NETHER_SULFUR_DEPOSIT);
 
-        register(context, SULFUR_DEPOSIT_PLACED, sulfurdeposit, placement(CountPlacement.of(500),-64, 64));
+        register(context, SULFUR_DEPOSIT_PLACED, sulfurdeposit, placement(CountPlacement.of(15),0, 128));
 
     }
 

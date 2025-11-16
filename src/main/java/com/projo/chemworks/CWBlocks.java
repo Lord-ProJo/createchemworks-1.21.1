@@ -45,41 +45,36 @@ public class CWBlocks {
                                 lt.applyExplosionDecay(b, LootItem.lootTableItem(CWItems.RAW_SULFUR.get())
                                         .apply(ApplyBonusCount.addOreBonusCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE))))));
             })
-            .blockstate((c, p) -> {
-                var vb = p.getVariantBuilder(c.getEntry());
-                var all = vb.forAllStates((state) -> ConfiguredModel.builder().build());
-                ConfiguredModel m0 = ConfiguredModel.builder()
-                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit")))
-                        .weight(2)
-                        .build();
-                ConfiguredModel m1 = ConfiguredModel.builder()
-                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit1")))
-                        .weight(2)
-                        .build();
-                ConfiguredModel m2 = ConfiguredModel.builder()
-                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit2")))
-                        .weight(2)
-                        .build();
-                ConfiguredModel m3 = ConfiguredModel.builder()
-                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit3")))
-                        .weight(2)
-                        .build();
-                ConfiguredModel m4 = ConfiguredModel.builder()
-                        .modelFile(p.models().getExistingFile(new ResourceLocation("createchemworks", "block/sulfur_deposit4")))
-                        .weight(1)
-                        .build();
+                    .blockstate((ctx, prov) -> {
+                        String path = "block/" + ctx.getName();
+                        // Génère 4 modèles différents (side_1..side_4 et end_1..end_4)
+                        var m0 = prov.models().cubeColumn(ctx.getName(), prov.modLoc(path + "_side"), prov.modLoc(path + "_end"));
+                        var m1 = prov.models().cubeColumn(ctx.getName() + "_1", prov.modLoc(path + "_side1"), prov.modLoc(path + "_end1"));
+                        var m2 = prov.models().cubeColumn(ctx.getName() + "_2", prov.modLoc(path + "_side2"), prov.modLoc(path + "_end2"));
+                        var m3 = prov.models().cubeColumn(ctx.getName() + "_3", prov.modLoc(path + "_side3"), prov.modLoc(path + "_end3"));
+                        var m4 = prov.models().cubeColumn(ctx.getName() + "_4", prov.modLoc(path + "_side4"), prov.modLoc(path + "_end4"));
 
-                vb.addModels(p.models(), m0, m1, m2, m3, m4);
-            })
+
+                        // Crée des ConfiguredModel pour chaque fichier de modèle (poids = 1)
+                        var cm0 = new  net.neoforged.neoforge.client.model.generators.ConfiguredModel(m0);
+                        var cm1 = new  net.neoforged.neoforge.client.model.generators.ConfiguredModel(m1);
+                        var cm2 = new  net.neoforged.neoforge.client.model.generators.ConfiguredModel(m2);
+                        var cm3 = new  net.neoforged.neoforge.client.model.generators.ConfiguredModel(m3);
+                        var cm4 = new  net.neoforged.neoforge.client.model.generators.ConfiguredModel(m4);
+
+
+                        // Ajoute les modèles comme variantes dans le blockstate (sélection aléatoire parmi les variantes)
+                        var builder = prov.getVariantBuilder(ctx.get());
+                        builder.partialState().setModels(cm0, cm1, cm2, cm3, cm4);
+                    })
             .tag(BlockTags.NEEDS_IRON_TOOL,
                     Tags.Blocks.ORES)
             .transform(tagBlockAndItem(Map.of()))
             .tag(Tags.Items.ORES)
-                    .model((c, p) -> {
-                        String path = "block/" + c.getName();
-                        p.cubeColumn(c.getName(), p.modLoc(path + "_side"), p.modLoc(path + "_end"));
-                    })
-
+            .model((ctx, prov) -> {
+                String path = "block/" + ctx.getName();
+                prov.cubeColumn(ctx.getName(), prov.modLoc(path + "_side"), prov.modLoc(path + "_end"));
+            })
             .build()
             .register();
 

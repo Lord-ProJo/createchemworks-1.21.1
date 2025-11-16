@@ -25,7 +25,8 @@ public class CWConfiguredFeatures {
             NETHER_SULFUR_DEPOSIT = key("sulfur_deposit")
 
             ;
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
         //What bloc can  our block replace when generated
         RuleTest basaltReplaceables = new BlockMatchTest(Blocks.BASALT);
 
@@ -33,7 +34,7 @@ public class CWConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> sulfurTargetStates = List.of(
                 OreConfiguration.target(basaltReplaceables, CWBlocks.SULFUR_DEPOSIT.get().defaultBlockState()));
 
-        register(context, NETHER_SULFUR_DEPOSIT,Feature.ORE, new OreConfiguration(sulfurTargetStates, 15));
+        register(ctx, NETHER_SULFUR_DEPOSIT,Feature.ORE, new OreConfiguration(sulfurTargetStates, 8));
     }
 
 
